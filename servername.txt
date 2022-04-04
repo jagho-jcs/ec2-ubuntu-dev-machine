@@ -1,0 +1,8 @@
+#!/bin/bash
+hostname="ec2-ubuntu-dev-machine"
+
+hostnamectl set-hostname $hostname
+
+sudo sed -i " 1 s/.*/& $hostname/" /etc/hosts
+
+rm /etc/cloud/cloud.cfg.d/defaults.cfg
